@@ -6,6 +6,6 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 
-public class RevuePayement {
-    private TypePayement typePayement;
+public class CategorieChambre {
+    private float prix;
 }

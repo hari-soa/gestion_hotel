@@ -6,7 +6,6 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 
-
 public class Gerant {
     private String nom;
     private String prenom;

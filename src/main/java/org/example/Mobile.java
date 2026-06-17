@@ -11,11 +11,4 @@ public class Mobile extends CategorieChambre{
         super(prix);
     }
 
-    public void transferer(float montant, Payement destination) {
-        if (montant > 0 && this.getPrix() >= montant) {
-            this.retirer(montant);
-            destination.verser(montant);
-        }
-    }
-
 }

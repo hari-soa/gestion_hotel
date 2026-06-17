@@ -12,3 +12,4 @@ public class Payement extends CategorieChambre{
         this.typePayement = typePayement;
     }
 }
+

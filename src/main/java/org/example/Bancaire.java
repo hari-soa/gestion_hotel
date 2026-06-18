@@ -4,27 +4,25 @@ import lombok.Getter;
 
 @Getter
 
-public class Bancaire {
-    private float montant;
+public class Bancaire extends CategorieChambre {
     private float solde;
-    private String recue;
 
-    public void retirer(float montant) {
-        if (montant > 0 && montant <= solde) {
-            this.solde -= montant;
+    public Bancaire(float prix, float soldeInitial) {
+        super(prix);
+        this.solde = soldeInitial;
+    }
+
+    public String payerChambre(Gerant destination) {
+        float montantAPayer = this.getPrix();
+
+        if (this.solde >= montantAPayer) {
+            this.solde -= montantAPayer;
+
+            destination.verser(montantAPayer);
+
+            return "Reçu : Paiement de " + montantAPayer + "Ar effectué avec succès.";
+        } else {
+            return "Erreur : Solde insuffisant.";
         }
     }
-
-    public void transferer(float montant, Gerant destination) {
-        if (montant > 0 && this.solde >= montant) {
-            this.retirer(montant);
-            destination.verser(montant);
-        }
-    }
-
-    public boolean affichierRecue(String recue) {
-        this.montant = prix;
-        return true;
-    }
-
 }

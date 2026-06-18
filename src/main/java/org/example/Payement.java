@@ -4,12 +4,12 @@ import lombok.Getter;
 
 @Getter
 
-public class Payement extends CategorieChambre{
+public class Payement extends CategorieChambre {
     private TypePayement typePayement;
 
-    public Payement(float prix,  TypePayement typePayement) {
+
+    public Payement(float prix) {
         super(prix);
-        this.typePayement = typePayement;
     }
 }
 

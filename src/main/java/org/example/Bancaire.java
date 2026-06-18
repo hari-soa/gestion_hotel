@@ -22,5 +22,9 @@ public class Bancaire {
         }
     }
 
+    public boolean affichierRecue(String recue) {
+        this.montant = prix;
+        return true;
+    }
 
 }

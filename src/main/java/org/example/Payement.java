@@ -1,24 +1,29 @@
 package org.example;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 
 public abstract class Payement {
     private float solde;
 
-    public Payement(float soldeInitial) {
-        this.solde = soldeInitial;
+    public Payement(float solde) {
+        this.solde = solde;
     }
 
-    public String executerPayement(float montant, Gerant gerant) {
-        if (montant <= 0) return "Montant invalide";
-        if (this.solde < montant) return "Solde insuffisant";
+    public String executerPayement(Gerant gerant, CategorieChambre categorie) {
+        float montant = categorie.getPrixChambre();
+
+        if (montant <= 0) return "Erreur : Prix de chambre invalide.";
+        if (this.solde < montant) return "Erreur : Solde insuffisant.";
 
         verserAuGerant(montant, gerant);
 
         this.solde -= montant;
-        return "Payement de " + montant + "€ effectué avec succès.";
+
+        return "Paiement de " + montant + "€ effectué pour la catégorie : " + categorie.getNomCategorie();
     }
 
     public abstract void verserAuGerant(float montant, Gerant gerant);

@@ -1,7 +1,9 @@
 package org.example;
 
 public class Bancaire extends Payement {
-    public Bancaire(float solde) { super(solde); }
+    public Bancaire(float solde) {
+        super(solde);
+    }
 
     @Override
     public void verserAuGerant(float montant, Gerant gerant) {

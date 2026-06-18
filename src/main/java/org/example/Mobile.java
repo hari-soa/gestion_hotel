@@ -1,19 +1,10 @@
 package org.example;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+public class Mobile extends Payement {
+    public Mobile(float solde) { super(solde); }
 
-@Getter
-@AllArgsConstructor
-
-public class Mobile extends Client{
-    private float montant;
-    private float solde;
-
-    public Mobile(String telephone) {
-        super(telephone);
-
+    @Override
+    public void verserAuGerant(float montant, Gerant gerant) {
+        gerant.verserMobile(montant);
     }
-
-
 }

@@ -15,4 +15,8 @@ public class Client {
     public Client(String telephone) {
         this.telephone = telephone;
     }
+
+    public String getNom() {
+        return nom + " " + prenom;
+    }
 }

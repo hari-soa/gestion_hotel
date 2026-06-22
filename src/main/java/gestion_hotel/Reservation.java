@@ -8,7 +8,7 @@ import lombok.Getter;
 public class Reservation {
     private Client client;
     private Date date;
-    private Chambre chambre;
+    private GestionChambre chambre;
     private double prix;
     private StatutReservation statut;
 }

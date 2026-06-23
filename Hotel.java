@@ -14,7 +14,7 @@ public class Hotel {
     private Classe_hoteliere classe;
     private Gerant gerant;
     private List<Personnel> personnels;
-    private List<GestionChambre> chambres;
+    private List<Chambre> chambres;
     private List<Reservation> reservations;
     private Gerant gérant;
 
@@ -26,41 +26,40 @@ public class Hotel {
         personnels.remove(personnel);
     }
 
-    public void ajouterChambre(GestionChambre chambre) {
+    public void ajouterChambre(Chambre chambre) {
         chambres.add(chambre);
     }
 
-    public void supprimerChambre(GestionChambre chambre) {
+    public void supprimerChambre(Chambre chambre) {
         chambres.remove(chambre);
     }
 
     public Reservation creerReservation(
             Date date,
-            GestionChambre chambre,
+            Chambre chambre,
             Payement payement,
             Client client) {
 
         double prix = chambre.getCategorieChambre().getPrixChambre();
-        String resultat = payement.executerPayement(gerant, GestionChambre.getCategorieChambre());
+        String resultat = payement.executerPayement(gerant,);
         StatutReservation statut = resultat.startsWith("Erreur") ? StatutReservation.ENCOURS : StatutReservation.PAYE;
 
         Reservation reservation = new Reservation(client, date, chambre, prix, statut);
 
         reservations.add(reservation);
-        chambre.setDisponibilite(GestionChambre.disponibilte.prie);
+        chambre.setDisponibilite(Chambre.disponibilte.prie);
 
         return reservation;
     }
 
     public void annulerReservation(Reservation reservation) {
         reservations.remove(reservation);
-        reservation.getChambre().setDisponibilite(GestionChambre.disponibilte.libre);
+        reservation.getChambre().setDisponibilite(Chambre.disponibilte.libre);
     }
 
-    public List<GestionChambre> listerChambresDisponibles() {
+    public List<Chambre> listerChambresDisponibles() {
         return chambres.stream()
-                .filter(GestionChambre.getDisponibilte())
+                .filter(chambre -> chambres.contains(Chambre.disponibilte.libre))
                 .collect(Collectors.toList());
     }
-}
 }

@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @AllArgsConstructor
 @Data
-public class GestionChambre {
+public class Chambre {
     private float idChambre;
     private CategorieChambre categorieChambre;
     private disponibilte disponibilite;

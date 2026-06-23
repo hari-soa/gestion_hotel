@@ -1,5 +1,6 @@
-package org.example;
+package gestion_hotel;
 public class Cash extends Payement {
+
     public Cash() {
         super(0);
     }

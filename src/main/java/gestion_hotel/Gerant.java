@@ -1,18 +1,20 @@
-package org.example;
+package gestion_hotel;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
 
-public class Gerant {
-    private String nom;
-    private String prenom;
-    private String contact;
+public class Gerant extends Personnel{
     private float compteBancaireHotel;
     private float soldeMobileHotel;
     private float caisseCash;
+
+    public Gerant(String nom, String prenom, String contact, float soldeMobileHotel, float caisseCash, float compteBancaireHotel) {
+        super(nom, prenom, contact);
+        this.soldeMobileHotel = soldeMobileHotel;
+        this.compteBancaireHotel = compteBancaireHotel;
+        this.caisseCash = caisseCash;
+    }
 
     public void verserBancaire(float montant) {
         if (montant > 0) {

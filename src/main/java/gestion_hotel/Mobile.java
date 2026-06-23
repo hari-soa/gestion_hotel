@@ -1,4 +1,4 @@
-package org.example;
+package gestion_hotel;
 
 public class Mobile extends Payement {
     public Mobile(float solde) {

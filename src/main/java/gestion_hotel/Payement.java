@@ -1,4 +1,4 @@
-package org.example;
+package gestion_hotel;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +14,7 @@ public abstract class Payement {
     }
 
     public String executerPayement(Gerant gerant, CategorieChambre categorie) {
-        float montant = categorie.getPrixChambre();
+        float montant = categorie.getPrixParNuit();
 
         if (montant <= 0) return "Erreur : Prix de chambre invalide.";
         if (this.solde < montant) return "Erreur : Solde insuffisant.";
@@ -23,7 +23,7 @@ public abstract class Payement {
 
         this.solde -= montant;
 
-        return "Paiement de " + montant + "€ effectué pour la catégorie : " + categorie.getNomCategorie();
+        return "Paiement de " + montant + "Ar effectué pour la catégorie : " + categorie.getCapacite();
     }
 
     public abstract void verserAuGerant(float montant, Gerant gerant);

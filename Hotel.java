@@ -4,19 +4,29 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.util.List;
+<<<<<<< HEAD
 import java.util.stream.Collectors;
+=======
+>>>>>>> Hotel
 
 @AllArgsConstructor
 @Getter
 public class Hotel {
     private String adresse;
     private String nom;
+<<<<<<< HEAD
     private Classe_hoteliere classe;
     private Gerant gerant;
 
     private List<Personnel> personnels;
     private List<GestionChambre> chambres;
     private List<Reservation> reservations;
+=======
+    private Gerant gérant;
+
+    private List<Personnel> personnels;
+    private List<GestionChambre> chambres;
+>>>>>>> Hotel
 
     public void ajouterPersonnel(Personnel personnel) {
         personnels.add(personnel);
@@ -33,6 +43,7 @@ public class Hotel {
     public void supprimerChambre(GestionChambre chambre) {
         chambres.remove(chambre);
     }
+<<<<<<< HEAD
 
     public Reservation creerReservation(
             Date date,
@@ -63,3 +74,6 @@ public class Hotel {
                 .collect(Collectors.toList());
     }
 }
+=======
+}
+>>>>>>> Hotel

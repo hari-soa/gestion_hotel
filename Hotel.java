@@ -4,29 +4,19 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.util.List;
-<<<<<<< HEAD
 import java.util.stream.Collectors;
-=======
->>>>>>> Hotel
 
 @AllArgsConstructor
 @Getter
 public class Hotel {
     private String adresse;
     private String nom;
-<<<<<<< HEAD
     private Classe_hoteliere classe;
     private Gerant gerant;
-
     private List<Personnel> personnels;
     private List<GestionChambre> chambres;
     private List<Reservation> reservations;
-=======
     private Gerant gérant;
-
-    private List<Personnel> personnels;
-    private List<GestionChambre> chambres;
->>>>>>> Hotel
 
     public void ajouterPersonnel(Personnel personnel) {
         personnels.add(personnel);
@@ -43,7 +33,6 @@ public class Hotel {
     public void supprimerChambre(GestionChambre chambre) {
         chambres.remove(chambre);
     }
-<<<<<<< HEAD
 
     public Reservation creerReservation(
             Date date,
@@ -52,7 +41,7 @@ public class Hotel {
             Client client) {
 
         double prix = chambre.getCategorieChambre().getPrixChambre();
-        String resultat = payement.executerPayement(gerant, chambre.getCategorieChambre());
+        String resultat = payement.executerPayement(gerant, GestionChambre.getCategorieChambre());
         StatutReservation statut = resultat.startsWith("Erreur") ? StatutReservation.ENCOURS : StatutReservation.PAYE;
 
         Reservation reservation = new Reservation(client, date, chambre, prix, statut);
@@ -70,10 +59,8 @@ public class Hotel {
 
     public List<GestionChambre> listerChambresDisponibles() {
         return chambres.stream()
-                .filter(c.getDisponibilte())
+                .filter(GestionChambre.getDisponibilte())
                 .collect(Collectors.toList());
     }
 }
-=======
 }
->>>>>>> Hotel

@@ -8,5 +8,6 @@ import lombok.Data;
 public class CategorieChambre {
     float id;
     float capacite;
-    float prixParNuit;
+    float prixChambre;
+    String nomCategorie;
 }

@@ -11,7 +11,7 @@ public class GestionChambre {
     private float idChambre;
     private String categorieChambre;
     private disponibilte disponibilite;
-    private enum disponibilte {
+     enum disponibilte {
         libre,prie,reserve
     }
     private LocalDate dateDebut;

@@ -8,7 +8,6 @@ import lombok.ToString;
 @Getter
 @ToString
 
-
 public class Personnel {
     private String nom;
     private String prenom;

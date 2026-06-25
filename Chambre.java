@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 public class Chambre {
     private float idChambre;
-    private CategorieChambre categorieChambre;
+    private String categorieChambre;
     private disponibilte disponibilite;
      enum disponibilte {
         libre,prie,reserve

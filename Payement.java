@@ -13,8 +13,8 @@ public abstract class Payement {
         this.solde = solde;
     }
 
-    public String executerPayement(Gerant gerant, CategorieChambre categorie) {
-        float montant = categorie.getPrixChambre();
+    public String executerPayement(Gerant gerant, CategorieChambre nomCategorie) {
+        float montant = nomCategorie.getPrixChambre();
 
         if (montant <= 0) return "Erreur : Prix de chambre invalide.";
         if (this.solde < montant) return "Erreur : Solde insuffisant.";
@@ -23,7 +23,7 @@ public abstract class Payement {
 
         this.solde -= montant;
 
-        return "Paiement de " + montant + "Ar effectué pour la catégorie : " + categorie.getNomCategorie();
+        return "Paiement de " + montant + "Ar effectué pour la catégorie : " + nomCategorie.getNomCategorie();
     }
 
     public abstract void verserAuGerant(float montant, Gerant gerant);

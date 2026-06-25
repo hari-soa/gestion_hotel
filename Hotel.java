@@ -41,7 +41,7 @@ public class Hotel {
             Client client) {
 
         double prix = chambre.getCategorieChambre().getPrixChambre();
-        String resultat = payement.executerPayement(gerant,);
+        String resultat = payement.executerPayement(gerant,nomCategorie);
         StatutReservation statut = resultat.startsWith("Erreur") ? StatutReservation.ENCOURS : StatutReservation.PAYE;
 
         Reservation reservation = new Reservation(client, date, chambre, prix, statut);

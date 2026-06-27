@@ -1,4 +1,4 @@
-package gestion_hotel;
+package gestion_hotel.src.main.java.gestion_hotel;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,6 +8,6 @@ import lombok.Data;
 public class CategorieChambre {
     float id;
     float capacite;
-    float prixChambre;
+    float prixParNuit;
     String nomCategorie;
 }

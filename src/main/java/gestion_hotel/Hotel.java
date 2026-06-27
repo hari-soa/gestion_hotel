@@ -1,4 +1,4 @@
-package gestion_hotel;
+package gestion_hotel.src.main.java.gestion_hotel;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +16,6 @@ public class Hotel {
     private List<Personnel> personnels;
     private List<Chambre> chambres;
     private List<Reservation> reservations;
-    private Gerant gérant;
 
     public void ajouterPersonnel(Personnel personnel) {
         personnels.add(personnel);
@@ -38,10 +37,11 @@ public class Hotel {
             Date date,
             Chambre chambre,
             Payement payement,
-            Client client) {
+            Client client, CategorieChambre categorie) {
 
-        double prix = chambre.getCategorieChambre().getPrixChambre();
-        String resultat = payement.executerPayement(gerant,nomCategorie);
+        float prix;
+        prix = chambre.getCategorie().getPrixParNuit();
+        String resultat = payement.executerPayement(gerant,categorie);
         StatutReservation statut = resultat.startsWith("Erreur") ? StatutReservation.ENCOURS : StatutReservation.PAYE;
 
         Reservation reservation = new Reservation(client, date, chambre, prix, statut);

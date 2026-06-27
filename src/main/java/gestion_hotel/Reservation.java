@@ -1,4 +1,4 @@
-package gestion_hotel;
+package gestion_hotel.src.main.java.gestion_hotel;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import lombok.Getter;
 public class Reservation {
     private Client client;
     private Date date;
-    private GestionChambre chambre;
+    private Chambre chambre;
     private double prix;
     private StatutReservation statut;
 }

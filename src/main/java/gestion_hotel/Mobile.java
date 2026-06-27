@@ -1,4 +1,4 @@
-package gestion_hotel;
+package gestion_hotel.src.main.java.gestion_hotel;
 
 public class Mobile extends Payement {
     public Mobile(float solde) {
